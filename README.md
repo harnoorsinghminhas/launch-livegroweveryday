@@ -13,6 +13,7 @@ winner of this domain's design arena (F:/projects/ironman/design/parked-arenas-2
 | `assets/logo.svg` | PLACEHOLDER text wordmark: the logo slot. |
 | `assets/favicon.svg` | Placeholder browser icon (a letter on the accent colour). |
 | `CNAME` | The custom domain GitHub Pages serves. Do not delete it. |
+| `assets/audio/sample.mp3` | The narrated sample (made with Gemini text-to-speech, read by an artificial intelligence voice). |
 
 ## How to swap in the real logo (one place)
 The logo appears once, as a single image in `index.html`:
