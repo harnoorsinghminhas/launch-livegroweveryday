@@ -127,9 +127,9 @@ function stepProfile(flow, email, n) {
 
 /* ---------- reserve / buy dialog (preview: no payment is taken) ---------- */
 var TIERS = {
-  pro:   { n: "Pro",   list: "$9.99/mo", found: "$7.99/mo", yr: "or $79/yr founding", save: "You save $2/mo, 20%.", dep: "$9.99",  get: ["A daily plan made for you", "Weekly reflection recap", "Your founding price, locked"] },
-  max:   { n: "MAX",   list: "$19.99/mo", found: "$14.99/mo", yr: "or $149/yr founding", save: "You save $5/mo, $60/yr, 25%.", dep: "$29", get: ["Everything in Pro", "Monthly deep dives", "Every lane, every white paper"] },
-  ultra: { n: "Ultra", list: "$99.99/mo", found: "$69.99/mo", yr: "or $699/yr founding", save: "You save $30/mo, $360/yr, 30%.", dep: "$99", get: ["Everything in MAX", "The 21-book library", "Training by job title"] }
+  pro:   { n: "Pro",   list: "$9.99/mo", found: "$7.99/mo", yr: "or $79/yr founding", save: "Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.", dep: "$9.99",  get: ["A daily plan made for you", "Weekly reflection recap", "Your founding price, if you opt in at launch"] },
+  max:   { n: "MAX",   list: "$19.99/mo", found: "$14.99/mo", yr: "or $149/yr founding", save: "Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.", dep: "$29", get: ["Everything in Pro", "Monthly deep dives", "Every lane, every white paper"] },
+  ultra: { n: "Ultra", list: "$99.99/mo", found: "$69.99/mo", yr: "or $699/yr founding", save: "Nothing renews or converts on its own. At launch we email you a link: opt in and your deposit counts toward your first payment, or do nothing and it is refunded in full.", dep: "$99", get: ["Everything in MAX", "The 21-book library", "Training by job title"] }
 };
 var dlg = $("#co"), lastBtn = null;
 if (dlg) {
@@ -142,10 +142,10 @@ if (dlg) {
       $("#co-h").textContent = "Reserve " + T.n;
       var pr = clear($("#coPrice"));
       pr.appendChild(document.createTextNode("Launch price " + T.list + " · founding ")); pr.appendChild(h("b", {}, [T.found]));
-      pr.appendChild(document.createTextNode(", locked while you stay subscribed. ")); pr.appendChild(document.createTextNode(T.yr + "."));
+      pr.appendChild(document.createTextNode(", yours if you opt in at launch, kept while you stay subscribed. ")); pr.appendChild(document.createTextNode(T.yr + "."));
       $("#coSave").textContent = T.save;
       $("#coPay").textContent = "Reserve for " + T.dep;
-      $("#coRefund").textContent = "Refundable on request before launch only. This " + T.dep + " deposit reserves the founding price; it is not a subscription payment. The price shown is the price you pay at checkout.";
+      $("#coRefund").textContent = "Refundable in full until you opt in at launch. This " + T.dep + " deposit holds your place at the founding price; it is not a subscription. The price shown is the price you pay at checkout.";
       $("#coInsider").textContent = "Insiders get first access to new features, products and prices, sneak peeks by email, and notes from the build room.";
       open();
     });
@@ -155,9 +155,9 @@ if (dlg) {
       lastBtn = b; fill(["A 100-page PDF", "The audio version", "Delivered right away"]);
       $("#co-h").textContent = "Buy the AI-Era Defense Playbook";
       var pr = clear($("#coPrice")); pr.appendChild(h("b", {}, ["$49"])); pr.appendChild(document.createTextNode(", one-time purchase, all-in."));
-      $("#coSave").textContent = "A finished product at its normal price. No discount.";
+      $("#coSave").textContent = "The download link works for 30 days, up to 10 downloads.";
       $("#coPay").textContent = "Buy for $49";
-      $("#coRefund").textContent = "A finished digital product, delivered right away. Read the refund terms before you pay.";
+      $("#coRefund").textContent = "A digital download: we email the link after payment, usually within minutes. If it fails or is not as described, write within 14 days for a fix or a full refund.";
       $("#coInsider").textContent = "";
       open();
     });
