@@ -193,7 +193,7 @@ Object.keys(PACES).forEach(function (k) {
 function P0(k) { return PACES[k][0] + " a day"; }
 })();
 
-/* winner: the sample "one small step" picker, with an opt-in habit count and a free freeze day */
+/* the sample "one small step" picker, with an opt-in habit count and a free freeze day */
 (function () {
 "use strict";
 var L = window.LG, $ = L.$, h = L.h, clear = L.clear, store = L.store;
